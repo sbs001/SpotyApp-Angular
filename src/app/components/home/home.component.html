@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <div *ngFor="let realse of newRealses" class="col">
+        <div class="card h-100">
+            <img [src]="realse.images[0].url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ realse.name }}</h5>
+                <p class="card-text h-auto">
+                    <span *ngFor="let artist of realse.artists" class="badge bg-success">{{artist.name}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

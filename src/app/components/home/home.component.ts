@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private http:HttpClient, private spotify:SpotifyService) { 
 
     this.spotify.getNewRealses()
-      .subscribe((data:any) => this.newRealses = data.albums.items)
-      console.log(this.newRealses)
+      .subscribe((data) => this.newRealses = data)
   }
 
   ngOnInit(): void {

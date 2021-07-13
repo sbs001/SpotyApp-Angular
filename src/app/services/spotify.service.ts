@@ -31,4 +31,8 @@ export class SpotifyService {
   getArtistById(id:string){
     return this.getApi(`artists/${id}`)
   }
+
+  getTopTracks(artistId:string){
+    return this.getApi(`artists/${artistId}/top-tracks`)
+  }
 }

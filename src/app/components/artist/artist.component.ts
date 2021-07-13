@@ -5,27 +5,31 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
-  styleUrls: ['./artist.component.css']
+  styleUrls: ['./artist.component.css'],
 })
 export class ArtistComponent implements OnInit {
 
-  artist:any = {};
-  loading:boolean = true;
+  artist: any = {};
+  topTracks: any[] = [];
+  loading: boolean = true;
 
-  constructor(private router: ActivatedRoute,
-              private spotify:SpotifyService) { 
-              
-    this.router.params.subscribe(param => {
+  constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
 
-      this.spotify.getArtistById(param['id'])
-        .subscribe(data => {
-          this.artist = data;
-          this.loading=false
-        })
-      })
+    this.router.params.subscribe((param) => {
+      this.getArtist(param['id']);
+      this.getTopTracks(param['id']);     
+    })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  getArtist(id: string) {
+    this.spotify.getArtistById(id).subscribe((data) => (this.artist = data));
+  }
+  getTopTracks(id: string) {
+    this.spotify.getTopTracks(id).subscribe((data) => {
+      this.topTracks = data;
+      this.loading = false;
+    });
+  }
 }

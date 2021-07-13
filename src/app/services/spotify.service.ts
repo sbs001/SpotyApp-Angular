@@ -33,6 +33,7 @@ export class SpotifyService {
   }
 
   getTopTracks(artistId:string){
-    return this.getApi(`artists/${artistId}/top-tracks`)
+    return this.getApi(`artists/${artistId}/top-tracks?market=es`)
+      .pipe( map( data => data['tracks']))
   }
 }

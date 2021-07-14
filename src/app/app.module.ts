@@ -11,6 +11,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 //routes
 import { ROUTES } from './app.routes';
@@ -33,6 +34,7 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     DomseguroPipe,
     CardComponent,
     LoadingComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule, 

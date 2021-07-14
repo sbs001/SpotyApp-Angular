@@ -9,8 +9,8 @@ export class DomseguroPipe implements PipeTransform {
 
   constructor( private domSanitizer:DomSanitizer ){ }
 
-  transform( value: string, url: string): any {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl( url + value );
+  transform( value: string): any {
+    return this.domSanitizer.bypassSecurityTrustResourceUrl( 'https://open.spotify.com/embed/track/' + value );
   }
 
 }

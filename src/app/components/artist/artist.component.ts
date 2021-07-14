@@ -29,6 +29,7 @@ export class ArtistComponent implements OnInit {
   getTopTracks(id: string) {
     this.spotify.getTopTracks(id).subscribe((data) => {
       this.topTracks = data;
+      console.log(this.topTracks)
       this.loading = false;
     });
   }

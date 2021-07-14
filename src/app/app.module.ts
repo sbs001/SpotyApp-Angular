@@ -20,6 +20,7 @@ import { SpotifyService } from './services/spotify.service';
 import { NoImgPipe } from './pipes/no-img.pipe';
 import { CardComponent } from './components/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistComponent,
     NavbarComponent,
     NoImgPipe,
+    DomseguroPipe,
     CardComponent,
     LoadingComponent,
   ],

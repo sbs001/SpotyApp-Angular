@@ -11,16 +11,22 @@ export class HomeComponent implements OnInit {
 
   newRealses:any[] = [];
   loading:boolean;
+  error:boolean;
 
   constructor(private http:HttpClient, private spotify:SpotifyService) { 
 
     this.loading = true;
 
     this.spotify.getNewRealses()
-      .subscribe((data) => {
-        this.newRealses = data;
-        this.loading = false;
-      })
+      .subscribe(
+        (data) => {
+          this.newRealses = data;
+          this.loading = false;
+       },
+        (error) => {
+          this.loading = false;
+          this.error = true
+        })
       
   }
 
